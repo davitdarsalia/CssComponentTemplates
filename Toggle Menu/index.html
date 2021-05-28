@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="toggleMenu" onclick="toggleMenu()"></div>
+	<nav id="menu">
+		<img src="logo.png">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Cases</a></li>
+			<li><a href="#">Personal projects</a></li>
+			<li><a href="#">About me</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+	<script>
+		var toggleStatus = 1;
+		function toggleMenu() {
+			if (toggleStatus == 1) {
+				document.getElementById("menu").style.left = "-240px";
+				toggleStatus = 0;
+			} else if (toggleStatus == 0) {
+				document.getElementById("menu").style.left = "0px";
+				toggleStatus = 1;
+			}
+		}
+	</script>
+</body>
+</html>
