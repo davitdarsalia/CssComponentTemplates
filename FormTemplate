@@ -1,0 +1,43 @@
+import React,{useState} from 'react'
+
+function App() {
+  const [email,setEmail] = useState('')
+  const [password,setPassword] = useState('')
+  const [option,setOption] = useState('Register')
+
+  let resultData = {}
+
+  const submitHandler = (e) => {
+    e.preventDefault()
+     resultData = {
+      email,password,option
+    }
+    console.log(resultData)
+  }
+
+  return (
+    <>
+    <form className="form" onSubmit={submitHandler}>
+        <label>Enter Email</label>
+        <input type='text' value={email} onChange = {(e) => setEmail(e.target.value)} />
+
+        <label>Enter password</label>
+        <input type='password' value={password} onChange = {(e) => setPassword(e.target.value)} />
+
+        <label>Choose An Option</label>
+        <select value = {option} onChange={(e) => setOption(e.target.value)}>
+          <option>SignUp</option>
+          <option>Register</option>
+          <option>SignIn</option>
+        </select>
+        <button type='submit'>Finish It</button>
+    </form>
+
+    <h1>{email}</h1>
+    <h1>{password}</h1>
+    <h1>{option}</h1>
+    </>
+  );
+}
+
+export default App;
